@@ -1,0 +1,13 @@
+@import "variables";
+// resets
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $light-color;
+  font-family: $font-stack;
+  line-height: 1.6;
+}
