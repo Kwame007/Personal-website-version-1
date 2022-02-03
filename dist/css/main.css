@@ -1,5 +1,5 @@
 /* google font */
-@import url("https://fonts.googleapis.com/css2?family=Judson:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -22,41 +22,15 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
-@media screen and (min-width: 768px) {
-  .menu-btn {
-    visibility: hidden;
-  }
-  .main-nav {
-    visibility: visible;
-  }
-  .main-nav__lists {
-    display: block;
-    transform: translateY(100%);
-    height: 100%;
-    background: transparent;
-  }
-  .main-nav__item {
-    display: block;
-    transform: translateX(0);
-  }
-  .section-content__title {
-    font-family: "Judson", serif;
-    font-size: 80px;
-    font-weight: 100;
-    letter-spacing: 1px;
-  }
-  .section-passion__wrap {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .section-work__container {
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* hide */
+.show {
+  visibility: hidden;
 }
 
 #main-content {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/dist/images/pietro-jeng-n6B49lTx7NM-unsplash.jpg") no-repeat top
-      center/cover;
+    url("/dist/images/nubelson-fernandes--Xqckh_XVU4-unsplash.jpg") no-repeat
+      top center/cover;
   background-attachment: fixed;
   overflow: hidden;
   height: 100vh;
@@ -112,7 +86,7 @@ header .menu-btn__burger.open::after {
 }
 
 header .main-nav {
-  background: #011627;
+  background: #19282f;
   color: #fdfffc;
   display: flex;
   justify-content: space-between;
@@ -136,7 +110,7 @@ header .main-nav__items {
   left: 0;
   opacity: 0.98;
   width: 100vw;
-  background: #011627;
+  background: #19282f;
   visibility: hidden;
 }
 header .main-nav__items.open {
@@ -182,7 +156,7 @@ header .main-nav__item.open {
 }
 
 .active {
-  border-bottom: 2.5px solid #2ec4b6;
+  border-bottom: 2.5px solid #00af91;
 }
 
 .section-content {
@@ -196,10 +170,11 @@ header .main-nav__item.open {
   height: 100%;
 }
 .section-content__title {
-  font-family: "Judson", serif;
+  font-family: "Poppins", sans-serif;
   font-size: 100px;
   font-weight: 100;
   letter-spacing: 3px;
+  line-height: 1.2;
 }
 .section-content__text {
   font-weight: 600;
@@ -315,13 +290,13 @@ header .main-nav__item.open {
   text-align: center;
   color: #333;
 }
-.section-passion__box i {
+.section-passion__box img {
   display: inline-block;
   font-size: 35px;
   margin-bottom: 2rem;
   padding: 2rem;
   vertical-align: middle;
-  background: #2ec4b6;
+  background-color: #41e6db94;
   width: 100px;
   height: 100px;
   border-radius: 100%;
@@ -379,7 +354,7 @@ header .main-nav__item.open {
   align-items: center;
   text-align: center;
   background: linear-gradient(rgba(1, 22, 39, 0.5), rgba(1, 22, 39, 0.5)),
-    url("/dist/images/fabio-oyXis2kALVg-unsplash.jpg") no-repeat center
+    url("/dist/images/alex-kulikov-BrunIOLQMfQ-unsplash.jpg") no-repeat center
       center/cover;
   background-attachment: fixed;
   color: #fdfffc;
@@ -459,7 +434,7 @@ header .main-nav__item.open {
   text-decoration: none;
   font-size: 14px;
   font-weight: 700;
-  color: #2ec4b6;
+  color: #00af91;
   text-transform: capitalize;
 }
 .section-work__text a i {
@@ -479,7 +454,7 @@ header .main-nav__item.open {
   padding: 1rem;
 }
 .contact i {
-  color: #011627;
+  color: #19282f;
 }
 .contact-title,
 .contact i {
@@ -497,13 +472,13 @@ header .main-nav__item.open {
   margin-top: 30px;
 }
 .contact-btn:hover {
-  background: #011627;
+  background: #19282f;
   color: #fdfffc;
   border: 2px solid #fdfffc;
 }
 
 .main-footer {
-  background: #011627;
+  background: #19282f;
   color: #fdfffc;
   padding-top: 30px;
   text-align: center;
@@ -531,7 +506,7 @@ header .main-nav__item.open {
 .main-footer .footer-icons i:hover {
   transition: all 0.5s ease-in-out;
   transform: scale(1.09);
-  background: #2ec4b6;
+  background: #10c5b9;
 }
 .main-footer img {
   width: 50px;
@@ -542,6 +517,9 @@ header .main-nav__item.open {
   display: inline-block;
   height: 100%;
   width: 100%;
+}
+.beam-up {
+  animation: beamUp 10s infinite;
 }
 .main-footer p {
   font-size: 14px;
@@ -556,5 +534,49 @@ header .main-nav__item.open {
   }
   75% {
     box-shadow: #ffffff00 0 0 0 50px;
+  }
+}
+@keyframes beamUp {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  50% {
+    transform: translate3d(0px, -20px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
+
+/* media queries */
+@media screen and (min-width: 768px) {
+  .menu-btn {
+    visibility: hidden;
+  }
+  .main-nav {
+    visibility: visible;
+  }
+  .main-nav__lists {
+    display: block;
+    transform: translateY(100%);
+    height: 100%;
+    background: transparent;
+  }
+  .main-nav__item {
+    display: block;
+    transform: translateX(0);
+  }
+  .section-passion__wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .section-work__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 540px) {
+  .section-content__title {
+    font-size: 50px;
+    letter-spacing: 2.5px;
+    line-height: 1.2;
   }
 }
