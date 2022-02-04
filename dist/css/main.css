@@ -518,30 +518,120 @@ header .main-nav__item.open {
   margin-right: 8px;
   background: #01101ca6;
   padding: 1rem;
-  transition: all 0.5s ease-in-out;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
 }
 .main-footer .footer-icons i:hover {
   transition: all 0.5s ease-in-out;
-  transform: scale(1.09);
-  background: #10c5b9;
+  transform: scale(1.03);
+  background: #00af91;
 }
 .main-footer img {
   width: 50px;
   margin-bottom: 10px;
 }
-.main-footer img::after {
-  content: "Beam me up";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-}
+
 .beam-up {
   animation: beamUp 10s infinite;
 }
 .main-footer p {
   font-size: 14px;
   font-weight: 300;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+/* form style */
+
+/* form wrap */
+.form-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: -10%;
+  transform: translate(-50%, -50%);
+  padding: 1rem 2rem;
+  max-width: 100%;
+  box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
+  border-radius: 10px;
+  background-color: #fff;
+  z-index: 1000;
+  transition: all 0.5s;
+}
+.form-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.form-wrap h3 {
+  color: #0a1823;
+  font-size: 50px;
+  font-weight: 300;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+/* form input */
+.form-group {
+  margin-bottom: 0.5rem;
+}
+.form-group label {
+  color: #0a1823;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.form-group input {
+  display: block;
+  padding: 1rem;
+  width: 90%;
+  border: none;
+  background: #f2f5ee;
+  border-radius: 5px;
+}
+.form-group textarea {
+  width: 90%;
+  display: block;
+  background: #f2f5ee;
+  border: none;
+  border-radius: 5px;
+}
+
+/* form button */
+.form-btn {
+  border: none;
+  padding: 1rem 4rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  background: #0a1823;
+  color: #f2f5ee;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  width: 90%;
+}
+
+/* form img */
+.form-wrap-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* overlay */
+.overlay-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(10, 24, 35, 0.5);
+  backdrop-filter: blur(4px);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transition: all 0.5s;
+}
+.close-modal {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.9rem;
+  cursor: pointer;
 }
 
 /* keyframe pulse*/
@@ -625,10 +715,29 @@ header .main-nav__item.open {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* hide modal */
+.hide {
+  visibility: hidden;
+  opacity: 0;
+}
 @media screen and (max-width: 540px) {
   .section-content__title {
     font-size: 50px;
     letter-spacing: 2.5px;
     line-height: 1.2;
+  }
+  /* form modal */
+  .form-wrap {
+    display: block;
+  }
+  .form-modal {
+    max-width: 100%;
+    margin: 0 1rem;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-btn {
+    width: 100%;
   }
 }

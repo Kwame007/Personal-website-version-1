@@ -295,6 +295,43 @@
       <div class="js"></div>
       <p>&copy; Nana Kwame 2021</p>
     </footer>
+    <!-- contact form -->
+    <div class="form-modal hide">
+      <div class="form-wrap">
+        <!-- exit icon -->
+        <img
+          src="/dist/images/exit.svg"
+          alt="close form modal"
+          class="close-modal"
+        />
+        <form action="#">
+          <h3>Get in touch!</h3>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" name="fullname" id="fullname" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <button type="submit" class="form-btn">send</button>
+        </form>
+        <div class="form-wrap-img">
+          <img src="/dist/images/mail.svg" alt="person sending mail" />
+        </div>
+      </div>
+    </div>
+    <!-- overlay -->
+    <div class="overlay-bg hide"></div>
     <!-- js script -->
     <script src="/dist/script.js"></script>
   </body>
