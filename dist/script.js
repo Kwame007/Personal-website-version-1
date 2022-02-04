@@ -9,6 +9,10 @@ const sectionContent = document.querySelector(".section-content");
 const rocket = document.querySelector(".main-footer");
 const navbar = document.querySelector(".main-nav");
 
+const formModal = document.querySelectorAll(".modal");
+const overlay = document.querySelector(".overlay-bg");
+const close = document.querySelector(".close-modal");
+
 let showMenu = false;
 
 // event listener
@@ -68,7 +72,33 @@ const smoothScroll = function (e) {
   }
 };
 
+// close modal function
+const closeModal = function (e) {
+  e.preventDefault();
+
+  // hide form
+  document.querySelector(".form-modal").classList.add("hide");
+  // hide overlay
+  document.querySelector(".overlay-bg").classList.add("hide");
+};
+
 // smooth scrolling
 sectionContent.addEventListener("click", smoothScroll);
 rocket.addEventListener("click", smoothScroll);
 navbar.addEventListener("click", smoothScroll);
+
+// form modal
+formModal.forEach((element) => {
+  element.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // show form modal
+    document.querySelector(".form-modal").classList.remove("hide");
+    // show overlay
+    document.querySelector(".overlay-bg").classList.remove("hide");
+  });
+});
+
+// close modal
+overlay.addEventListener("click", closeModal);
+close.addEventListener("click", closeModal);
