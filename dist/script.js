@@ -1,110 +1,74 @@
-// const menuBtn = document.querySelector(".menu-btn");
-// const hamburger = document.querySelector(".menu-btn__burger");
-// const nav = document.querySelector(".main-nav__items");
-// const menuNav = document.querySelector(".main-nav__lists");
-// const arrowIcon = document.querySelector(".fas");
-// const navItems = document.querySelectorAll(".main-nav__item");
+const menuBtn = document.querySelector(".menu-btn");
+const hamburger = document.querySelector(".menu-btn__burger");
+const nav = document.querySelector(".main-nav__items");
+const menuNav = document.querySelector(".main-nav__lists");
+const arrowIcon = document.querySelector(".fas");
+const navItems = document.querySelectorAll(".main-nav__item");
 
-// let showMenu = false;
+const sectionContent = document.querySelector(".section-content");
+const rocket = document.querySelector(".main-footer");
+const navbar = document.querySelector(".main-nav");
 
-// // event listener
-// menuBtn.addEventListener("click", toggleMenu);
+let showMenu = false;
 
-// function toggleMenu() {
-//   if (!showMenu) {
-//     hamburger.classList.add("open");
+// event listener
+menuBtn.addEventListener("click", toggleMenu);
 
-//     nav.classList.add("open");
-//     menuNav.classList.add("open");
-//     navItems.forEach((item) => item.classList.add("open"));
-//     arrowIcon.style.visibility = "hidden";
+function toggleMenu() {
+  if (!showMenu) {
+    // remove pulsing button
+    document.querySelector(".section-content__icon").classList.add("show");
 
-//     showMenu = true;
-//     console.log(hamburger);
-//   } else {
-//     hamburger.classList.remove("open");
-//     nav.classList.remove("open");
-//     menuNav.classList.remove("open");
-//     navItems.forEach((item) => item.classList.remove("open"));
+    hamburger.classList.add("open");
 
-//     arrowIcon.style.visibility = "visible";
+    nav.classList.add("open");
+    menuNav.classList.add("open");
+    navItems.forEach((item) => item.classList.add("open"));
+    arrowIcon.style.visibility = "hidden";
 
-//     showMenu = false;
-//   }
-// }
+    showMenu = true;
+    console.log(hamburger);
+  } else {
+    // show pulsing button
+    document.querySelector(".section-content__icon").classList.remove("show");
 
-// // recaps
-// const count = function () {
-//   let counter = 0;
-//   return function () {
-//     console.log(counter++);
-//   };
-// };
-// const callCounter = count();
-// callCounter();
-// callCounter();
+    hamburger.classList.remove("open");
+    nav.classList.remove("open");
+    menuNav.classList.remove("open");
+    navItems.forEach((item) => item.classList.remove("open"));
 
-// function oneWord(word) {
-//   return word.replace(/ /g, "").toLowerCase();
-// }
-// console.log(oneWord("AMAGIDON TIS THE AMAGIS"));
+    arrowIcon.style.visibility = "visible";
 
-// const transform = function (string, func) {
-//   console.log(`Transformed string: ${func(string)}`);
-//   console.log(`Original string: ${string}`);
-//   console.log(`Transformed by: ${func.name}`);
-// };
+    showMenu = false;
+  }
+}
 
-// const upperFistWord = function (str) {
-//   const strArr = str.toLowerCase().split(" ");
-//   const firstWordUpper = [];
-//   for (const letter of strArr) {
-//     firstWordUpper.push(letter[0].toUpperCase() + letter.slice(1));
-//   }
+// smooth scrool function
+const smoothScroll = function (e) {
+  e.preventDefault();
+  let id;
+  // matching condition (pulsing btn)
+  if (e.target.classList.contains("arrow-down")) {
+    id = e.target.parentElement.getAttribute("href");
 
-//   return firstWordUpper.join("");
-// };
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
 
-// transform("welcome", upperFistWord);
-// transform("infinitecimal", upperFistWord);
+  // matching condition (rockect img)
+  if (e.target.classList.contains("beam-up")) {
+    id = e.target.parentElement.getAttribute("href");
 
-// const greeting = function () {
-//   return function (name) {
-//     console.log(`Hello ${name}`);
-//   };
-// };
-// greeting()("Wilson");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
 
-// const jonasCatalogue = {
-//   name: "Jonas",
-//   books: [],
-//   addBook(bookName, ISBN) {
-//     console.log(
-//       `${this.name} added a new book titled: ${bookName} and ISBN: ${ISBN}`
-//     );
+  // matching condition (navigation)
+  if (e.target.classList.contains("main-nav__link")) {
+    id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
+};
 
-//     this.books.push(bookName);
-//   },
-// };
-// jonasCatalogue.addBook("In The Wonder Land🌋", "E234");
-// jonasCatalogue.addBook("Squid Game🦑", "S323");
-// console.log(jonasCatalogue);
-
-// // using the call() method
-// const markCatalogue = {
-//   name: "Mark",
-//   books: [],
-// };
-// const addBook = jonasCatalogue.addBook;
-// addBook.call(markCatalogue, "Only You👧🏼", "A998");
-// console.log(markCatalogue);
-
-// // using apply() method
-// const sarahCatalogue = {
-//   name: "Sarah",
-//   books: [],
-// };
-// addBook.apply(sarahCatalogue, ["I Am Me🥰", "E232"]);
-
-// const addToCat = addBook.bind(markCatalogue);
-// addToCat("Breaking Bad 💀", "A123");
+// smooth scrolling
+sectionContent.addEventListener("click", smoothScroll);
+rocket.addEventListener("click", smoothScroll);
+navbar.addEventListener("click", smoothScroll);
