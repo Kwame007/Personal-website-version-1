@@ -92,7 +92,7 @@ header .main-nav {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  padding: 1rem 1.5rem;
+  padding: 0 1rem;
 }
 header .main-nav__logo--link {
   display: flex;
@@ -147,6 +147,18 @@ header .main-nav__link {
   text-transform: uppercase;
   transition: all 0.5s ease-in-out;
 }
+.nav-btn {
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
+  background: #00af91;
+  padding: 0.5rem;
+  letter-spacing: 1px;
+}
+.nav-btn:hover {
+  background: #03856f;
+}
+
 header .main-nav__item {
   transform: translateX(100%);
   transition: all 0.5s ease-in-out;
@@ -177,7 +189,7 @@ header .main-nav__item.open {
   line-height: 1.2;
 }
 .section-content__title span {
-  color: #10c5b9;
+  color: #00af91;
 }
 .section-content__text {
   font-weight: 600;
@@ -470,14 +482,16 @@ header .main-nav__item.open {
   font-size: 1.2rem;
 }
 .contact-btn {
+  border-radius: 5px;
   color: #333;
   font-weight: 700;
   margin-top: 30px;
 }
 .contact-btn:hover {
   background: #19282f;
+  box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
   color: #fdfffc;
-  border: 2px solid #fdfffc;
+  border: 2px solid #19282f;
 }
 
 .main-footer {
@@ -583,7 +597,7 @@ header .main-nav__item.open {
     margin: 1rem 0;
     margin-right: 2rem;
     font-weight: 700;
-    font-size: .8rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     transition: all 0.5s ease-in-out;
   }
