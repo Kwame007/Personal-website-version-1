@@ -40,7 +40,6 @@ header .menu-btn {
   position: absolute;
   z-index: 1;
   right: 1rem;
-  top: 1rem;
   height: 20px;
   width: 28px;
   cursor: pointer;
@@ -595,6 +594,10 @@ header .main-nav__item.open {
   border-radius: 5px;
 }
 
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+}
 /* form button */
 .form-btn {
   border: none;
@@ -632,6 +635,11 @@ header .main-nav__item.open {
   top: 0.5rem;
   right: 0.9rem;
   cursor: pointer;
+}
+/* hide modal */
+.hide {
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* keyframe pulse*/
@@ -715,12 +723,23 @@ header .main-nav__item.open {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-/* hide modal */
-.hide {
-  visibility: hidden;
-  opacity: 0;
+@media screen and (max-width: 1024px) {
+  .form-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: -45%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 2rem;
+    max-width: 100%;
+    box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 1000;
+    transition: all 0.5s;
+  }
 }
+
 @media screen and (max-width: 540px) {
   .section-content__title {
     font-size: 50px;
@@ -731,13 +750,30 @@ header .main-nav__item.open {
   .form-wrap {
     display: block;
   }
-  .form-modal {
-    max-width: 100%;
-    margin: 0 1rem;
-  }
+
   .form-group input,
   .form-group textarea,
   .form-btn {
     width: 100%;
+  }
+  .form-wrap h3 {
+    font-size: 30px;
+  }
+  .form-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: -45%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 2rem;
+    max-width: 100%;
+    box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 1000;
+    transition: all 0.5s;
+  }
+  .form-wrap-img {
+    display: none;
   }
 }
