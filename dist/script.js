@@ -102,3 +102,15 @@ formModal.forEach((element) => {
 // close modal
 overlay.addEventListener("click", closeModal);
 close.addEventListener("click", closeModal);
+
+// function
+const greeting = function (firstName, lastName) {
+  return `Hello ${firstName} ${lastName}`;
+};
+
+console.log(greeting("Mark", "Cuban"));
+
+const addNum = (num1, num2) => {
+  return num1 + num2;
+};
+console.log(addNum(2, 3));
